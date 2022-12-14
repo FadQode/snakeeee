@@ -30,10 +30,10 @@ while game:
         python.extend()
         score.addscore()
     if python.head.xcor() < -280 or python.head.xcor() > 280 or python.head.ycor() < -280 or python.head.ycor() > 280:
-        score.gameover()
-        game = False
+        score.highestscore()
+        python.losing()
     for body in python.snake_body[1:]:
         if python.head.distance(body) < 10:
-            score.gameover()
-            game = False
+            score.highestscore()
+            python.losing()
 screen.exitonclick()

@@ -30,6 +30,12 @@ class Snake:
         ular.color("white")
         self.snake_body.append(ular)
 
+    def losing(self):
+        for ular in self.snake_body:
+            ular.goto(1000, 1000)
+        self.snake_body.clear()
+        self.make_a_snake()
+        self.head = self.snake_body[0]
 
     def snake_move(self):
         for i in range(len(self.snake_body) - 1, 0, -1):
